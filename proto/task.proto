@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package task;
+
+option go_package = "TaskManagerApi/proto";
+
+service TaskService {
+  rpc GetTask(GetTaskRequest) returns (TaskResponse);
+}
+
+message GetTaskRequest {
+  int32 id = 1;
+}
+
+message TaskResponse {
+  int32 id = 1;
+  string title = 2;
+  string description = 3;
+  bool completed = 4;
+}
